@@ -179,3 +179,6 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Archivos del proyecto que no deben subirse a GitHub
+Consignas-ABP-PROGRAMACION-Y-BASE DE DATOS.md

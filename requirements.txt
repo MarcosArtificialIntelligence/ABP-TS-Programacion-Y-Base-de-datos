@@ -1,0 +1,21 @@
+# Análisis de negocio: Ventas, Clientes e Insights
+
+
+# Análisis de datos
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Visualización
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# Procesamiento de archivos Excel
+openpyxl>=3.0.9
+
+# Utilidades adicionales
+python-dateutil>=2.8.0
+
+# Para desarrollo y testing (opcional)
+jupyter>=1.0.0
+jupyterlab>=3.0.0
+ipykernel>=6.0.0
