@@ -1,5 +1,5 @@
 # Análisis de negocio: Ventas, Clientes e Insights
-
+# ETL con Pandas y SQL - Evidencia de Aprendizaje N° 3
 
 # Análisis de datos
 pandas>=1.5.0
@@ -15,7 +15,13 @@ openpyxl>=3.0.9
 # Utilidades adicionales
 python-dateutil>=2.8.0
 
-# Para desarrollo y testing (opcional)
+# Para desarrollo y testing
 jupyter>=1.0.0
 jupyterlab>=3.0.0
 ipykernel>=6.0.0
+
+# Base de datos (SQLite3 viene incluido con Python)
+# sqlite3 - built-in con Python 3.x
+
+# Herramientas adicionales útiles
+ipython>=8.0.0

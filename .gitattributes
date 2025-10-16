@@ -1,2 +1,43 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Ensure Jupyter notebooks are treated as text files
+*.ipynb text
+
+# Ensure CSV files are treated as text files
+*.csv text
+
+# Ensure SQL files are treated as text files
+*.sql text
+
+# Ensure database files are treated as binary
+*.db binary
+*.sqlite binary
+*.sqlite3 binary
+
+# Ensure Excel files are treated as binary
+*.xlsx binary
+*.xls binary
+
+# Ensure image files are treated as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+
+# Ensure PDF files are treated as binary
+*.pdf binary
+
+# Ensure compressed files are treated as binary
+*.zip binary
+*.tar.gz binary
+*.rar binary
+
+# Ensure executable files are treated as binary
+*.exe binary
+*.app binary
+
+# Ensure system files are ignored
+.DS_Store binary
+Thumbs.db binary

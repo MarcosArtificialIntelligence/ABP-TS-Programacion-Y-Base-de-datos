@@ -1,16 +1,17 @@
-# 📊 Análisis de Negocio: Ventas, Clientes e Insights
+# 📈 Análisis de Negocio: Ventas, Clientes e Insights
 
-> **Proceso ETL completo con Pandas** | Análisis exploratorio de datos de ventas y clientes
+> **Proceso ETL completo con Pandas y SQL** | Análisis exploratorio de datos de ventas y clientes
 
 [![Python 3.10](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
 [![Pandas >=1.5](https://img.shields.io/badge/Pandas-1.5%2B-green.svg)](https://pandas.pydata.org/)
 [![Conda ENTORNO-ABP](https://img.shields.io/badge/Conda-ENTORNO--ABP-orange.svg)](https://docs.conda.io/)
+[![SQLite](https://img.shields.io/badge/SQLite-3.x-lightblue.svg)](https://sqlite.org/)
 
 ---
 
 ## 🎯 Descripción del Proyecto
 
-Este proyecto implementa un **proceso ETL completo** (Extract, Transform, Load) utilizando Pandas para analizar datos de ventas y clientes de centros comerciales. El análisis incluye limpieza de datos, transformaciones avanzadas, análisis exploratorio y generación de insights de negocio.
+Este proyecto implementa un **proceso ETL completo** (Extract, Transform, Load) utilizando Pandas y SQLite para analizar datos de ventas y clientes de centros comerciales. El análisis incluye limpieza de datos, transformaciones avanzadas, análisis exploratorio y generación de insights de negocio con validación SQL.
 
 ### 🎓 Contexto Académico
 - **Materia:** Programación y Base de Datos
@@ -26,12 +27,12 @@ Este proyecto implementa un **proceso ETL completo** (Extract, Transform, Load) 
 - **Python 3.10**
 - **Anaconda/Miniconda**
 
-
 ### ⚡ Instalación en 3 pasos
 
 ```bash
-# 1. Clonar el repositorio
-git clone <repository-url>
+# 1. Clonar el repositorio o correr el cd
+git clone https://github.com/MarcosArtificialIntelligence/ABP-TS-Programacion-Y-Base-de-datos.git
+
 cd ABP-TS-Programacion-Y-Base-de-datos-ARRUTI-ISSETTA-MRAD
 
 # 2. Crear y activar entorno conda
@@ -53,7 +54,8 @@ jupyter lab
 ├── 📄 environment.yml                                     # Entorno conda
 ├── 📄 requirements.txt                                    # Dependencias pip
 ├── 📄 DIAGRAMA_BASE_DATOS.md                             # Diagrama de BD
-└── 📁 datos_procesados/                                  # Resultados (generado)
+├── 📄 .gitignore                                          # Archivos ignorados
+└── 📄 ventas_clientes.db                                 # Base de datos SQLite (generado)
 ```
 
 ---
@@ -74,7 +76,7 @@ jupyter lab
 ### 📤 **Load** - Carga de Datos
 - ✅ DataFrame final con datos limpios
 - ✅ Validación de restricciones de integridad
-- ✅ Exportación de resultados
+- ✅ Carga a base de datos SQLite
 
 ---
 
@@ -92,11 +94,19 @@ jupyter lab
 - **Categoría top:** Clothing (45.3% de ventas)
 - **Método de pago:** Cash (44.7% de transacciones)
 
-### 🔍 Análisis por Dimensiones
-- **Demográfico:** Comportamiento por género y edad
-- **Productos:** Precios y categorías más rentables
-- **Temporal:** Tendencias mensuales y estacionales
-- **Geográfico:** Rendimiento por centros comerciales
+### 📊 Visualizaciones Profesionales
+El notebook incluye **dashboard ejecutivo** con visualizaciones de nivel empresarial:
+
+#### 🎨 **Dashboard Ejecutivo Principal**
+- **Heatmap demográfico** para segmentación por género y edad
+- **Gráficos de barras horizontales** para top categorías por ingresos
+- **Gráficos de pie** para distribución de métodos de pago
+- **Tendencias temporales** con análisis de evolución
+
+#### 📋 **Validación SQL**
+- **Base de datos SQLite** con todos los datos del ETL
+- **Consultas SQL** que validan los hallazgos clave
+- **Tablas estilizadas** con formato profesional
 
 ---
 
@@ -107,30 +117,12 @@ jupyter lab
 - **NumPy** - Operaciones numéricas
 - **Matplotlib** - Visualizaciones básicas
 - **Seaborn** - Visualizaciones avanzadas
+- **SQLite3** - Base de datos local (built-in)
 
 ### 🐍 Entorno de Desarrollo
 - **Python 3.10** - Lenguaje principal
 - **Conda** - Gestión de entornos
 - **Jupyter Lab** - Entorno interactivo
-
-### 📦 Dependencias Completas
-```yaml
-# Análisis de datos
-pandas>=1.5.0
-numpy>=1.21.0
-
-# Visualización
-matplotlib>=3.5.0
-seaborn>=0.11.0
-
-# Procesamiento
-openpyxl>=3.0.9
-python-dateutil>=2.8.0
-
-# Desarrollo
-jupyter>=1.0.0
-jupyterlab>=3.0.0
-```
 
 ---
 
@@ -150,7 +142,9 @@ jupyter notebook
 ### 📓 Ejecución del Notebook
 1. Abrir `Analisis-de-negocio-Ventas-Clientes-Insights.ipynb`
 2. Ejecutar celdas secuencialmente (Shift + Enter)
-3. Revisar resultados y visualizaciones
+3. **Especial atención a la celda 3** que contiene el dashboard ejecutivo
+4. **Celda 5** incluye la validación SQL de los hallazgos clave
+5. Revisar resultados y dashboards ejecutivos
 
 ### 🔄 Ejecución Alternativa
 ```bash
@@ -180,9 +174,14 @@ python Analisis-de-negocio-Ventas-Clientes-Insights.py
 6. ✅ DataFrame final con datos limpios y transformados
 7. ✅ Restricciones de integridad aplicadas y documentadas
 
+### ✅ **Base de Datos SQL**
+8. ✅ Carga de datos a base de datos SQLite
+9. ✅ Consultas SQL que validan los hallazgos clave
+10. ✅ Formato profesional de tablas SQL
+
 ### ✅ **Análisis de Datos**
-8. ✅ Análisis exploratorio completo
-9. ✅ Resumen, evaluación y síntesis del estudio
+11. ✅ Análisis exploratorio completo
+12. ✅ Resumen, evaluación y síntesis del estudio
 
 ---
 
@@ -237,6 +236,18 @@ sns.set_palette("viridis")
 custom_analysis = final_df.groupby('shopping_mall')['total_amount'].sum()
 ```
 
+### 🗄️ Consultas SQL Personalizadas
+```python
+# Agregar nuevas consultas SQL
+custom_query = """
+SELECT category, COUNT(*) as transacciones
+FROM ventas_clientes 
+GROUP BY category
+ORDER BY transacciones DESC
+"""
+result = pd.read_sql_query(custom_query, conn)
+```
+
 ---
 
 ## 🐛 Solución de Problemas
@@ -263,6 +274,13 @@ conda env remove -n ENTORNO-ABP
 conda env create -f environment.yml
 ```
 
+### ❌ Error de Base de Datos SQLite
+```python
+# Verificar que sqlite3 esté disponible (built-in en Python)
+import sqlite3
+print(sqlite3.version)
+```
+
 ---
 
 ## 📚 Documentación Adicional
@@ -270,43 +288,51 @@ conda env create -f environment.yml
 - **`DIAGRAMA_BASE_DATOS.md`** - Diagrama de base de datos y relaciones
 - **Comentarios en el código** - Documentación inline detallada
 - **Docstrings** - Documentación de funciones principales
+- **`ventas_clientes.db`** - Base de datos SQLite generada
 
 ---
 
-## 🤝 Contribución
+## 🎨 **Características del Proyecto**
 
-### 🔄 Flujo de Trabajo
-1. Fork del repositorio
-2. Crear rama para nueva feature
-3. Realizar cambios y pruebas
-4. Enviar Pull Request
+### 📊 **Visualizaciones Profesionales**
+- **Diseño ejecutivo** con paleta de colores coherente
+- **Insights destacados** en cada gráfico
+- **Formato profesional** listo para presentaciones
+- **Dashboard integrado** con múltiples tipos de gráficos
 
-### 📝 Estándares de Código
-- Seguir PEP 8 para Python
-- Documentar funciones complejas
-- Incluir comentarios explicativos
+### 🗄️ **Base de Datos SQL**
+- **SQLite integrado** para persistencia de datos
+- **Consultas optimizadas** para validación de hallazgos
+- **Tablas estilizadas** con formato profesional
+- **Validación cruzada** entre Pandas y SQL
 
----
+### 📈 **Valor para Ciencia de Datos**
+- **Comunicación efectiva** de hallazgos complejos
+- **Storytelling con datos** para audiencias ejecutivas
+- **Validación estadística** de hipótesis
+- **Base sólida** para toma de decisiones estratégicas
 
-## 📄 Licencia
-
-Este proyecto es parte de un trabajo académico del **ISPC** (Instituto Superior Politécnico de Córdoba).
+**✅ Proceso ETL completo con Pandas y SQL implementado exitosamente**
 
 ---
 
 ## 👥 Autores
 
 **Equipo de Desarrollo:**
-- ARRUTI, ISSETTA, MRAD
-- **Materia:** Programación y Base de Datos
-- **Institución:** ISPC
+- **ARRUTI Marcos Agustín** - Análisis y desarrollo
+- **ISSETTA Rocío Belén** - Documentación y testing
+- **ARRUTI Julián Alejandro** - Visualizaciones y diseño
+- **MRAD Caro Farid Yusef** - Base de datos y SQL
+
+**Materia:** Programación y Base de Datos  
+**Institución:** ISPC - Instituto Superior Politécnico de Córdoba
 
 ---
 
 <div align="center">
 
 **🎓 Trabajo Práctico - ISPC**  
-*Proceso ETL completo con Pandas*
+*Proceso ETL completo con Pandas y SQL*
 
 [⬆️ Volver al inicio](#-análisis-de-negocio-ventas-clientes-e-insights)
 

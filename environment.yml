@@ -1,5 +1,6 @@
 # Análisis de negocio: Ventas, Clientes e Insights
 # Archivo de entorno conda para reproducir el ambiente de desarrollo
+# ETL con Pandas y SQL - Evidencia de Aprendizaje N° 3
 
 name: ENTORNO-ABP
 channels:
@@ -28,11 +29,12 @@ dependencies:
   - jupyter>=1.0.0
   - jupyterlab>=3.0.0
   - ipykernel>=6.0.0
+  - ipython>=8.0.0
 
   # Herramientas adicionales útiles
   - pip
-  - ipython
 
   # Dependencias pip (si no están disponibles en conda)
   - pip:
-    # Agregar aquí dependencias que solo estén en PyPI
+    # SQLite3 viene incluido con Python, no necesita instalación adicional
+    # Todas las dependencias principales están disponibles en conda
