@@ -1,60 +1,6 @@
 # 📈 Análisis de Negocio: Ventas, Clientes e Insights
 
-> **Análisis de negocio: Ventas, Clientes e Insights.**
-
-**Requisitos para ejecutar todas las celdas:** 
-- Instalar Anaconda desde su web oficial 
-- Python 3.10  
-- Pandas  
-- y activar el entorno: `ENTORNO-ABP`  
-
-
-**Instrucciones de instalación y del entorno:**
-
-Arriba en View o con ctrl + ñ abris la terminal y pones los siguientes comandos:
-
-1. Si esas leyendo el Readme.md desde github y aun no clonaste el repo:
-   ```
-   Con el link podes clonarlo desde el github desktop y abrirlo en tu IDE favorito pero sino:
-   En la Terminal (bash):
-   
-
-   git clone https://github.com/MarcosArtificialIntelligence/ABP-TS-Programacion-Y-Base-de-datos.git
-   
-
-   si ya lo tenes clonado cargalo con el siguiente comando:
-
-
-   cd ABP-TS-Programacion-Y-Base-de-datos-ARRUTI-ISSETTA-MRAD
-
-
-   ```
-
-2. Crea el entorno Conda usando el archivo `environment.yml`:
-
-   ```
-   
-   En la Terminal (bash):
-   Comando 1:
-   conda env create -f environment.yml
-
-   Comando 2:
-   conda activate ENTORNO-ABP
-
-
-   ```
-
-3. Lanza Jupyter Lab para ejecutar el análisis:
-   ```
-   
-   En la Terminal (bash)
-   jupyter lab
-
-
-   ```
-
-
-----------------------------------------------------------------
+> **Análisis ETL completo para identificación de segmentos de clientes más valiosos**
 
 ## 🎯 Descripción del Proyecto
 
@@ -68,9 +14,152 @@ Este proyecto implementa un **proceso ETL completo** (Extract, Transform, Load) 
 
 ---
 
+## 🚀 Instalación y Configuración
 
+### Prerrequisitos
+- **Anaconda** instalado desde su web oficial
+- **Python 3.10** o superior
+- **Git** para clonar el repositorio
 
-### 📂 Estructura del Proyecto
+### 📋 Instrucciones de Instalación
+
+#### 1. Clonar el Repositorio
+```bash
+git clone https://github.com/MarcosArtificialIntelligence/ABP-TS-Programacion-Y-Base-de-datos.git
+cd ABP-TS-Programacion-Y-Base-de-datos-ARRUTI-ISSETTA-MRAD
+```
+
+#### 2. Crear el Entorno Conda
+
+⚠️ **IMPORTANTE - Limpieza Previa Recomendada:**
+
+Si ya tienes un entorno anterior o quieres una instalación completamente limpia:
+
+```bash
+# 1. Desactivar entorno actual (si está activo)
+conda deactivate
+
+# 2. Eliminar entorno anterior (si existe)
+conda env remove -n ABP-2025
+
+# 3. Cerrar terminal completamente y abrir una nueva
+# (Esto limpia variables de entorno y memoria)
+```
+
+**Crear el entorno:**
+```bash
+# Crear el entorno desde el archivo environment.yml
+conda env create -f environment.yml
+
+# Activar el entorno
+conda activate ABP-2025
+```
+
+**Verificar instalación:**
+```bash
+# Verificar que el entorno esté activo
+conda info --envs
+# Deberías ver ABP-2025 con un asterisco (*)
+```
+
+#### 3. Lanzar Jupyter Lab
+
+```bash
+# Asegúrate de estar en el directorio del proyecto
+cd "ruta/a/tu/proyecto"
+
+# Lanzar Jupyter Lab
+jupyter lab
+```
+
+#### 4. Ejecutar el Análisis
+
+1. Abrir `Analisis-de-negocio-Ventas-Clientes-Insights.ipynb`
+2. **IMPORTANTE:** Ejecutar todas las celdas en orden secuencial
+3. Si hay errores, reiniciar el kernel: `Kernel → Restart Kernel`
+4. Los datos se procesarán automáticamente
+
+---
+
+## ⚠️ Consideraciones Importantes
+
+### 🔄 **Antes de Crear el Entorno**
+
+Si ya tienes un entorno anterior o quieres una instalación limpia:
+
+1. **Desactivar entorno actual:**
+   ```bash
+   conda deactivate
+   ```
+
+2. **Eliminar entorno anterior (opcional):**
+   ```bash
+   conda env remove -n ABP-2025
+   ```
+
+3. **Cerrar terminal completamente:**
+   - Cierra la terminal actual
+   - Abre una nueva terminal
+   - Esto limpia variables de entorno y memoria
+
+4. **Verificar estado limpio:**
+   ```bash
+   conda info --envs
+   # No debería mostrar ningún entorno con asterisco (*)
+   ```
+
+### 🚨 **Comandos Críticos**
+
+- **NUNCA ejecutes** `conda env create` dos veces - te dará error
+- **SIEMPRE activa** el entorno antes de trabajar: `conda activate ABP-2025`
+- **Verifica** que estés en el directorio correcto antes de ejecutar comandos
+- **Si tienes problemas**, puedes recrear el entorno completo
+
+### 🔧 **Secuencia de Trabajo Diaria**
+
+```bash
+# 1. Abrir terminal
+# 2. Navegar al proyecto
+cd "ruta/a/tu/proyecto"
+
+# 3. Activar entorno
+conda activate ABP-2025
+
+# 4. Lanzar Jupyter
+jupyter lab
+
+# 5. En Jupyter: Kernel → Restart Kernel (si hay problemas)
+```
+
+### 🐛 **Solución de Problemas Comunes**
+
+#### Error: "Environment already exists"
+```bash
+# Eliminar entorno existente
+conda env remove -n ABP-2025
+# Crear nuevamente
+conda env create -f environment.yml
+```
+
+#### Error: "Command not found: conda"
+```bash
+# Reinicializar conda
+conda init
+# Cerrar y abrir nueva terminal
+```
+
+#### Error: "Kernel died"
+```bash
+# En Jupyter: Kernel → Restart Kernel
+# O cerrar Jupyter y reactivar entorno
+conda deactivate
+conda activate ABP-2025
+jupyter lab
+```
+
+---
+
+## 📂 Estructura del Proyecto
 
 ```
 📁 Proyecto/
@@ -78,32 +167,38 @@ Este proyecto implementa un **proceso ETL completo** (Extract, Transform, Load) 
 ├── 📁 Dataset-Kaggle/                                     # Datos originales
 │   ├── customer_data.csv                                  # 99,457 clientes
 │   └── sales_data.csv                                     # 99,457 transacciones
+├── 📁 datos_procesados/                                   # Datos procesados
+│   ├── analisis_completo.xlsx
+│   ├── clientes_procesados.csv
+│   ├── datos_combinados.csv
+│   └── resumen_*.csv
 ├── 📄 environment.yml                                     # Entorno conda
 ├── 📄 requirements.txt                                    # Dependencias pip
 ├── 📄 DIAGRAMA_BASE_DATOS.md                             # Diagrama de BD
-├── 📄 .gitignore                                          # Archivos ignorados
 └── 📄 ventas_clientes.db                                 # Base de datos SQLite (generado)
 ```
 
 ---
 
-## 🔍 Proceso ETL Implementado
+## 🔄 Proceso ETL Implementado
 
 ### 📥 **Extract** - Extracción de Datos
 - ✅ Carga de archivos CSV desde `Dataset-Kaggle/`
 - ✅ Validación de estructura y tipos de datos
 - ✅ Verificación de integridad referencial
+- ✅ Análisis exploratorio inicial
 
 ### 🔄 **Transform** - Transformación de Datos
 - ✅ Limpieza y normalización de datos
 - ✅ Categorización por edad y género
-- ✅ Análisis de métodos de pago por segmentos
 - ✅ Cálculo de métricas derivadas
+- ✅ Unificación de datasets
 
 ### 📤 **Load** - Carga de Datos
 - ✅ DataFrame final con datos limpios
 - ✅ Validación de restricciones de integridad
 - ✅ Carga a base de datos SQLite
+- ✅ Consultas SQL de validación
 
 ---
 
@@ -116,10 +211,10 @@ Este proyecto implementa un **proceso ETL completo** (Extract, Transform, Load) 
 - **Calidad de datos:** 100% completitud
 
 ### 📈 Insights Principales
-- **Género predominante:** Female (59.7% de ventas)
-- **Grupo etario líder:** 51+ años (36.3% de ventas)
-- **Categoría top:** Clothing (45.3% de ventas)
-- **Método de pago:** Cash (44.7% de transacciones)
+- **Género predominante:** Female (59.8% de clientes)
+- **Grupo etario líder:** 51+ años (mayor valor por transacción)
+- **Categoría top:** Clothing (mayor participación en ingresos)
+- **Centros comerciales:** Análisis de performance por ubicación
 
 ### 📊 Visualizaciones Profesionales
 El notebook incluye **dashboard ejecutivo** con visualizaciones de nivel empresarial:
@@ -127,7 +222,7 @@ El notebook incluye **dashboard ejecutivo** con visualizaciones de nivel empresa
 #### 🎨 **Dashboard Ejecutivo Principal**
 - **Heatmap demográfico** para segmentación por género y edad
 - **Gráficos de barras horizontales** para top categorías por ingresos
-- **Gráficos de pie** para distribución de métodos de pago
+- **Análisis de centros comerciales** segmentado por local
 - **Tendencias temporales** con análisis de evolución
 
 #### 📋 **Validación SQL**
@@ -155,6 +250,17 @@ El notebook incluye **dashboard ejecutivo** con visualizaciones de nivel empresa
 
 ## 🎮 Uso del Proyecto
 
+### 🔄 Ejecución Estándar
+```bash
+# Activar entorno
+conda activate ABP-2025
+
+# Lanzar Jupyter Lab
+jupyter lab
+
+# Abrir y ejecutar el notebook
+# Analisis-de-negocio-Ventas-Clientes-Insights.ipynb
+```
 
 ### 🔄 Ejecución Alternativa
 ```bash
@@ -174,10 +280,10 @@ python Analisis-de-negocio-Ventas-Clientes-Insights.py
 
 ### ✅ **Transformación de Datos (Transform)**
 4. ✅ Transformaciones adicionales implementadas:
-   - Modo de pago más frecuente por género
-   - Métodos de pago por rango etario (25-35 años)
-   - Métodos de pago más utilizados por mujeres
-   - Precios por categoría de productos
+   - Segmentación demográfica por género y edad
+   - Análisis de categorías de productos
+   - Cálculo de métricas de negocio
+   - Análisis de centros comerciales
 5. ✅ Documentación completa de transformaciones
 
 ### ✅ **Carga de Datos (Load)**
@@ -200,27 +306,27 @@ python Analisis-de-negocio-Ventas-Clientes-Insights.py
 ### 📊 Dashboard de Métricas
 ```
 🎯 MÉTRICAS GENERALES
-├── Período: 01/01/2021 - 08/03/2023
+├── Período: 01/01/2021 - 31/12/2022
 ├── Clientes únicos: 99,457
 ├── Transacciones: 99,457
-├── Ingresos totales: $251,505,794.25
-└── Valor promedio: $2,528.79
+├── Ingresos totales: $XXX,XXX,XXX.XX
+└── Valor promedio: $X,XXX.XX
 
 👥 INSIGHTS POR GÉNERO
-├── Female: $150,207,136.02 (59.7%)
-└── Male: $101,298,658.23 (40.3%)
+├── Female: XX.X% de clientes
+└── Male: XX.X% de clientes
 
 👴 INSIGHTS POR EDAD
-├── 18-25: $38,075,393.69 (15.2%)
-├── 26-35: $47,826,744.49 (19.0%)
-├── 36-50: $74,133,147.83 (29.5%)
-└── 51+: $91,193,246.77 (36.3%)
+├── 18-25: XX.X%
+├── 26-35: XX.X%
+├── 36-50: XX.X%
+└── 51+: XX.X%
 ```
 
 ### 🏆 Top Categorías por Ventas
-1. **Clothing** - $113,996,791.04 (45.3%)
-2. **Shoes** - $66,553,451.47 (26.5%)
-3. **Technology** - $57,862,350.00 (23.0%)
+1. **Clothing** - Mayor participación en ingresos
+2. **Shoes** - Segunda categoría más importante
+3. **Technology** - Tercera categoría relevante
 
 ---
 
@@ -232,7 +338,6 @@ python Analisis-de-negocio-Ventas-Clientes-Insights.py
 customer_file = "ruta/a/tu/customer_data.csv"
 sales_file = "ruta/a/tu/sales_data.csv"
 ```
-
 
 ### 🗄️ Consultas SQL Personalizadas
 ```python
@@ -248,35 +353,6 @@ result = pd.read_sql_query(custom_query, conn)
 
 ---
 
-## 🐛 Solución de Problemas
-
-### ❌ Error: "No se encontró el archivo"
-```bash
-# Verificar estructura de directorios
-ls -la Dataset-Kaggle/
-# Asegurar que los archivos CSV estén presentes
-```
-
-### ❌ Error: "Memory Error"
-```python
-# Para datasets grandes, usar procesamiento por chunks
-chunk_size = 10000
-for chunk in pd.read_csv(file, chunksize=chunk_size):
-    # Procesar chunk
-```
-
-### ❌ Error de Dependencias
-```bash
-# Reinstalar entorno completo
-conda env remove -n ENTORNO-ABP
-conda env create -f environment.yml
-```
-
-
-
----
-
-
 ## 👥 Autores
 
 **Equipo de Desarrollo:**
@@ -287,3 +363,15 @@ conda env create -f environment.yml
 
 **Materia:** Programación y Base de Datos  
 **Institución:** ISPC - Instituto Superior Politécnico de Córdoba
+
+---
+
+## 📄 Licencia
+
+Este proyecto es parte de un trabajo académico para la materia "Programación y Base de Datos" del ISPC.
+
+---
+
+**¡Análisis completado exitosamente!** ✅
+
+Este análisis proporciona una base sólida para la toma de decisiones estratégicas basadas en datos, permitiendo optimizar recursos y maximizar el valor del cliente.
