@@ -1,8 +1,13 @@
 # Diagrama de Base de Datos
 
-## 🗄️ Esquema para dbdiagram.io
+Esta en la carpeta pero sino podes ver la captura de pantalla del Diagrama en google drive: https://drive.google.com/file/d/14zIDjKkFemKt3MNg04JGfitqj1iteXSL/view?usp=sharing
 
-Copia y pega el siguiente código en [dbdiagram.io](https://dbdiagram.io/) para visualizar el diagrama:
+
+## 🗄️ o crear el Esquema en dbdiagram.io
+
+link con el diagrama ya creado: dbdiagram: https://dbdiagram.io/d/68efc4fb2e68d21b41a1e477
+
+O copia y pega el siguiente código en [dbdiagram.io](https://dbdiagram.io/) para visualizar el diagrama:
 
 ```sql
 // ============================================================================

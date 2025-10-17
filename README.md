@@ -1,13 +1,60 @@
 # 📈 Análisis de Negocio: Ventas, Clientes e Insights
 
-> **Proceso ETL completo con Pandas y SQL** | Análisis exploratorio de datos de ventas y clientes
+> **Análisis de negocio: Ventas, Clientes e Insights.**
 
-[![Python 3.10](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
-[![Pandas >=1.5](https://img.shields.io/badge/Pandas-1.5%2B-green.svg)](https://pandas.pydata.org/)
-[![Conda ENTORNO-ABP](https://img.shields.io/badge/Conda-ENTORNO--ABP-orange.svg)](https://docs.conda.io/)
-[![SQLite](https://img.shields.io/badge/SQLite-3.x-lightblue.svg)](https://sqlite.org/)
+**Requisitos para ejecutar todas las celdas:** 
+- Instalar Anaconda desde su web oficial 
+- Python 3.10  
+- Pandas  
+- y activar el entorno: `ENTORNO-ABP`  
 
----
+
+**Instrucciones de instalación y del entorno:**
+
+Arriba en View o con ctrl + ñ abris la terminal y pones los siguientes comandos:
+
+1. Si esas leyendo el Readme.md desde github y aun no clonaste el repo:
+   ```
+   Con el link podes clonarlo desde el github desktop y abrirlo en tu IDE favorito pero sino:
+   En la Terminal (bash):
+   
+
+   git clone https://github.com/MarcosArtificialIntelligence/ABP-TS-Programacion-Y-Base-de-datos.git
+   
+
+   si ya lo tenes clonado cargalo con el siguiente comando:
+
+
+   cd ABP-TS-Programacion-Y-Base-de-datos-ARRUTI-ISSETTA-MRAD
+
+
+   ```
+
+2. Crea el entorno Conda usando el archivo `environment.yml`:
+
+   ```
+   
+   En la Terminal (bash):
+   Comando 1:
+   conda env create -f environment.yml
+
+   Comando 2:
+   conda activate ENTORNO-ABP
+
+
+   ```
+
+3. Lanza Jupyter Lab para ejecutar el análisis:
+   ```
+   
+   En la Terminal (bash)
+   jupyter lab
+
+
+   ```
+
+
+----------------------------------------------------------------
 
 ## 🎯 Descripción del Proyecto
 
@@ -21,27 +68,7 @@ Este proyecto implementa un **proceso ETL completo** (Extract, Transform, Load) 
 
 ---
 
-## 🚀 Inicio Rápido
 
-### 📋 Prerequisitos
-- **Python 3.10**
-- **Anaconda/Miniconda**
-
-### ⚡ Instalación en 3 pasos
-
-```bash
-# 1. Clonar el repositorio o correr el cd
-git clone https://github.com/MarcosArtificialIntelligence/ABP-TS-Programacion-Y-Base-de-datos.git
-
-cd ABP-TS-Programacion-Y-Base-de-datos-ARRUTI-ISSETTA-MRAD
-
-# 2. Crear y activar entorno conda
-conda env create -f environment.yml
-conda activate ENTORNO-ABP
-
-# 3. Ejecutar el análisis
-jupyter lab
-```
 
 ### 📂 Estructura del Proyecto
 
@@ -128,23 +155,6 @@ El notebook incluye **dashboard ejecutivo** con visualizaciones de nivel empresa
 
 ## 🎮 Uso del Proyecto
 
-### 🖥️ Interfaz Recomendada
-```bash
-# Opción 1: JupyterLab (recomendado)
-conda activate ENTORNO-ABP
-jupyter lab
-
-# Opción 2: Jupyter Notebook
-conda activate ENTORNO-ABP
-jupyter notebook
-```
-
-### 📓 Ejecución del Notebook
-1. Abrir `Analisis-de-negocio-Ventas-Clientes-Insights.ipynb`
-2. Ejecutar celdas secuencialmente (Shift + Enter)
-3. **Especial atención a la celda 3** que contiene el dashboard ejecutivo
-4. **Celda 5** incluye la validación SQL de los hallazgos clave
-5. Revisar resultados y dashboards ejecutivos
 
 ### 🔄 Ejecución Alternativa
 ```bash
@@ -223,18 +233,6 @@ customer_file = "ruta/a/tu/customer_data.csv"
 sales_file = "ruta/a/tu/sales_data.csv"
 ```
 
-### 🎨 Personalizar Visualizaciones
-```python
-# Modificar configuración de gráficos
-plt.style.use('seaborn-v0_8')
-sns.set_palette("viridis")
-```
-
-### 📊 Agregar Nuevas Métricas
-```python
-# Extender análisis en celdas adicionales
-custom_analysis = final_df.groupby('shopping_mall')['total_amount'].sum()
-```
 
 ### 🗄️ Consultas SQL Personalizadas
 ```python
@@ -274,47 +272,10 @@ conda env remove -n ENTORNO-ABP
 conda env create -f environment.yml
 ```
 
-### ❌ Error de Base de Datos SQLite
-```python
-# Verificar que sqlite3 esté disponible (built-in en Python)
-import sqlite3
-print(sqlite3.version)
-```
+
 
 ---
 
-## 📚 Documentación Adicional
-
-- **`DIAGRAMA_BASE_DATOS.md`** - Diagrama de base de datos y relaciones
-- **Comentarios en el código** - Documentación inline detallada
-- **Docstrings** - Documentación de funciones principales
-- **`ventas_clientes.db`** - Base de datos SQLite generada
-
----
-
-## 🎨 **Características del Proyecto**
-
-### 📊 **Visualizaciones Profesionales**
-- **Diseño ejecutivo** con paleta de colores coherente
-- **Insights destacados** en cada gráfico
-- **Formato profesional** listo para presentaciones
-- **Dashboard integrado** con múltiples tipos de gráficos
-
-### 🗄️ **Base de Datos SQL**
-- **SQLite integrado** para persistencia de datos
-- **Consultas optimizadas** para validación de hallazgos
-- **Tablas estilizadas** con formato profesional
-- **Validación cruzada** entre Pandas y SQL
-
-### 📈 **Valor para Ciencia de Datos**
-- **Comunicación efectiva** de hallazgos complejos
-- **Storytelling con datos** para audiencias ejecutivas
-- **Validación estadística** de hipótesis
-- **Base sólida** para toma de decisiones estratégicas
-
-**✅ Proceso ETL completo con Pandas y SQL implementado exitosamente**
-
----
 
 ## 👥 Autores
 
@@ -326,14 +287,3 @@ print(sqlite3.version)
 
 **Materia:** Programación y Base de Datos  
 **Institución:** ISPC - Instituto Superior Politécnico de Córdoba
-
----
-
-<div align="center">
-
-**🎓 Trabajo Práctico - ISPC**  
-*Proceso ETL completo con Pandas y SQL*
-
-[⬆️ Volver al inicio](#-análisis-de-negocio-ventas-clientes-e-insights)
-
-</div>
